@@ -1,0 +1,9 @@
+Wire the replacement cable.
+Pump the water line, then check the gauge.
+The wire connects the pump.
+Gauge the pressure before starting.
+The gauge reads zero.
+Torque the bolt to spec.
+The required torque is 20 Nm.
+The technician is measuring pressure.
+Replace the faulty pump carefully.

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RepairPOS | Rule-Based POS Tagger</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark"><i data-lucide="workflow"></i></span><span>Repair<span class="brand-accent">POS</span></span></a>
+    <div class="topbar-right"><span class="status-dot"></span><span>Rule-based NLP pipeline</span><span class="version">NLTK · REGEX</span></div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero">
+      <div class="eyebrow"><span class="eyebrow-line"></span> TECHNICAL LANGUAGE ANALYZER</div>
+      <h1>See how a sentence<br><span>becomes structured data.</span></h1>
+      <p class="hero-copy">Enter a technical repair instruction and watch it move through each stage of our rule-based POS tagging pipeline.</p>
+    </section>
+
+    <section class="input-card glass-card">
+      <div class="card-heading">
+        <div><span class="step-index">01</span><h2>Input transcript</h2></div>
+        <span class="live-label"><span class="status-dot"></span> READY TO ANALYZE</span>
+      </div>
+      <label for="sentenceInput">Technical repair sentence</label>
+      <div class="input-wrap">
+        <textarea id="sentenceInput" rows="2" maxlength="1000" placeholder="e.g. Pump the water line, then check the gauge.">Pump the water line, then check the gauge.</textarea>
+        <button id="analyzeBtn" class="analyze-btn"><span>Analyze sentence</span><i data-lucide="arrow-right"></i></button>
+      </div>
+      <div class="input-footer">
+        <span><i data-lucide="info"></i> Try a command or describe a fault</span>
+        <div class="examples">
+          <button class="example-chip" data-example="The pump is damaged.">Fault description</button>
+          <button class="example-chip" data-example="Wire the sensor carefully.">Repair command</button>
+        </div>
+      </div>
+      <p id="errorMessage" class="error-message" role="alert"></p>
+    </section>
+
+    <section id="pipelineSection" class="pipeline-section" aria-live="polite">
+      <div class="section-heading">
+        <div><div class="eyebrow">PROCESS VISUALIZATION</div><h2>Inside the pipeline</h2></div>
+        <span class="section-note">FOLLOW EACH STEP</span>
+      </div>
+      <div class="pipeline-track">
+        <div class="pipeline-line"><div id="pipelineProgress"></div></div>
+        <div class="stage-grid">
+          <article class="stage-card" data-stage="preprocess">
+            <div class="stage-top"><span class="stage-number">01</span><span class="stage-icon"><i data-lucide="scan-text"></i></span></div>
+            <h3>Text preprocessing</h3><p>Trim extra spaces and prepare the input.</p>
+            <div class="stage-output" id="preprocessOutput">Waiting for input…</div>
+            <span class="stage-state">WAITING</span>
+          </article>
+          <article class="stage-card" data-stage="tokenize">
+            <div class="stage-top"><span class="stage-number">02</span><span class="stage-icon"><i data-lucide="split"></i></span></div>
+            <h3>Tokenization</h3><p>Split text into individual tokens.</p>
+            <div class="stage-output token-preview" id="tokenizeOutput">Tokens will appear here</div>
+            <span class="stage-state">WAITING</span>
+          </article>
+          <article class="stage-card" data-stage="regex">
+            <div class="stage-top"><span class="stage-number">03</span><span class="stage-icon"><i data-lucide="regex"></i></span></div>
+            <h3>Regex tagging</h3><p>Match words against ordered patterns.</p>
+            <div class="stage-output" id="regexOutput">Pattern matching</div>
+            <span class="stage-state">WAITING</span>
+          </article>
+          <article class="stage-card" data-stage="morphology">
+            <div class="stage-top"><span class="stage-number">04</span><span class="stage-icon"><i data-lucide="git-branch"></i></span></div>
+            <h3>Morphological rules</h3><p>Check word endings like <code>-ing</code>, <code>-ed</code>, <code>-ly</code>.</p>
+            <div class="stage-output" id="morphologyOutput">Suffix clues</div>
+            <span class="stage-state">WAITING</span>
+          </article>
+          <article class="stage-card" data-stage="default">
+            <div class="stage-top"><span class="stage-number">05</span><span class="stage-icon"><i data-lucide="shield-check"></i></span></div>
+            <h3>Default tagger</h3><p>Assign a fallback when no pattern matches.</p>
+            <div class="stage-output" id="defaultOutput">Fallback check</div>
+            <span class="stage-state">WAITING</span>
+          </article>
+          <article class="stage-card" data-stage="context">
+            <div class="stage-top"><span class="stage-number">06</span><span class="stage-icon"><i data-lucide="combine"></i></span></div>
+            <h3>Context rules</h3><p>Use nearby words for ambiguous terms.</p>
+            <div class="stage-output" id="contextOutput">Context corrections</div>
+            <span class="stage-state">WAITING</span>
+          </article>
+          <article class="stage-card final-stage" data-stage="results">
+            <div class="stage-top"><span class="stage-number">07</span><span class="stage-icon"><i data-lucide="table-2"></i></span></div>
+            <h3>Final POS results</h3><p>Review the final tag for each token.</p>
+            <div class="stage-output" id="resultsOutput">Results table below</div>
+            <span class="stage-state">WAITING</span>
+          </article>
+        </div>
+      </div>
+      <div class="animation-caption"><span class="pulse-dot"></span><span id="animationStatus">Enter a sentence and click Analyze to start the animation.</span></div>
+    </section>
+
+    <section id="resultsSection" class="results-section glass-card">
+      <div class="section-heading results-heading">
+        <div><div class="eyebrow">OUTPUT</div><h2>Token-by-token results</h2><p class="section-subtitle">The final tag is determined by the regex cascade, fallback, and context rules.</p></div>
+        <div id="accuracyBadge" class="result-count">NO RESULTS</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Token</th><th>Initial tag</th><th>Rule applied</th><th>Final POS tag</th><th>Context / explanation</th></tr></thead>
+          <tbody id="resultsBody"><tr class="empty-row"><td colspan="6"><span class="empty-icon"><i data-lucide="scan-search"></i></span><strong>Your results will appear here</strong><span>Run the analyzer to see the complete tagging trace.</span></td></tr></tbody>
+        </table>
+      </div>
+      <div class="tag-legend">
+        <span><b class="legend-dot noun"></b> NOUN</span><span><b class="legend-dot verb"></b> VERB</span><span><b class="legend-dot adj"></b> ADJ</span><span><b class="legend-dot adv"></b> ADV</span><span><b class="legend-dot other"></b> Other tags</span>
+      </div>
+    </section>
+
+    <section class="method-note">
+      <span class="note-icon"><i data-lucide="lightbulb"></i></span>
+      <p><strong>Remember:</strong> this is a rule-based tagger, not a trained model. The rules are transparent and easy to inspect, but unfamiliar words and unusual sentence structures can still be tagged incorrectly.</p>
+    </section>
+    <footer><span>RepairPOS · MT-AIML Mini-Project · Problem 6</span><span>Built with Python, Flask & NLTK</span></footer>
+  </main>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

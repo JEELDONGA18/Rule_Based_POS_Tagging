@@ -1,0 +1,230 @@
+{
+  "extended_set": {
+    "rule_order": "lexical_first",
+    "correct_tokens": 43,
+    "total_tokens": 47,
+    "accuracy": 0.9149,
+    "per_tag_accuracy": {
+      "ADJ": 0.5,
+      "ADP": 1.0,
+      "ADV": 1.0,
+      "AUX": 1.0,
+      "DET": 1.0,
+      "NOUN": 0.929,
+      "NUM": 1.0,
+      "PUNCT": 1.0,
+      "VERB": 0.75
+    },
+    "errors": [
+      {
+        "sentence": "Wire the replacement cable.",
+        "token": "cable",
+        "gold": "NOUN",
+        "predicted": "ADJ"
+      },
+      {
+        "sentence": "The wire connects the pump.",
+        "token": "connects",
+        "gold": "VERB",
+        "predicted": "NOUN"
+      },
+      {
+        "sentence": "The gauge reads zero.",
+        "token": "reads",
+        "gold": "VERB",
+        "predicted": "NOUN"
+      },
+      {
+        "sentence": "The required torque is 20 Nm.",
+        "token": "required",
+        "gold": "ADJ",
+        "predicted": "VERB"
+      }
+    ]
+  },
+  "sensitivity_dataset_sentences": 16,
+  "sensitivity_results": [
+    {
+      "rule_order": "lexical_first",
+      "correct_tokens": 103,
+      "total_tokens": 107,
+      "accuracy": 0.9626,
+      "per_tag_accuracy": {
+        "ADJ": 0.857,
+        "ADP": 1.0,
+        "ADV": 1.0,
+        "AUX": 1.0,
+        "CONJ": 1.0,
+        "DET": 1.0,
+        "NOUN": 0.964,
+        "NUM": 1.0,
+        "PUNCT": 1.0,
+        "VERB": 0.882
+      },
+      "errors": [
+        {
+          "sentence": "Wire the replacement cable.",
+          "token": "cable",
+          "gold": "NOUN",
+          "predicted": "ADJ"
+        },
+        {
+          "sentence": "The wire connects the pump.",
+          "token": "connects",
+          "gold": "VERB",
+          "predicted": "NOUN"
+        },
+        {
+          "sentence": "The gauge reads zero.",
+          "token": "reads",
+          "gold": "VERB",
+          "predicted": "NOUN"
+        },
+        {
+          "sentence": "The required torque is 20 Nm.",
+          "token": "required",
+          "gold": "ADJ",
+          "predicted": "VERB"
+        }
+      ]
+    },
+    {
+      "rule_order": "morphology_first",
+      "correct_tokens": 102,
+      "total_tokens": 107,
+      "accuracy": 0.9533,
+      "per_tag_accuracy": {
+        "ADJ": 0.714,
+        "ADP": 1.0,
+        "ADV": 1.0,
+        "AUX": 1.0,
+        "CONJ": 1.0,
+        "DET": 1.0,
+        "NOUN": 0.964,
+        "NUM": 1.0,
+        "PUNCT": 1.0,
+        "VERB": 0.882
+      },
+      "errors": [
+        {
+          "sentence": "Replace the damaged wire near the motor.",
+          "token": "damaged",
+          "gold": "ADJ",
+          "predicted": "VERB"
+        },
+        {
+          "sentence": "Wire the replacement cable.",
+          "token": "cable",
+          "gold": "NOUN",
+          "predicted": "ADJ"
+        },
+        {
+          "sentence": "The wire connects the pump.",
+          "token": "connects",
+          "gold": "VERB",
+          "predicted": "NOUN"
+        },
+        {
+          "sentence": "The gauge reads zero.",
+          "token": "reads",
+          "gold": "VERB",
+          "predicted": "NOUN"
+        },
+        {
+          "sentence": "The required torque is 20 Nm.",
+          "token": "required",
+          "gold": "ADJ",
+          "predicted": "VERB"
+        }
+      ]
+    },
+    {
+      "rule_order": "reverse_lexical",
+      "correct_tokens": 103,
+      "total_tokens": 107,
+      "accuracy": 0.9626,
+      "per_tag_accuracy": {
+        "ADJ": 0.857,
+        "ADP": 1.0,
+        "ADV": 1.0,
+        "AUX": 1.0,
+        "CONJ": 1.0,
+        "DET": 1.0,
+        "NOUN": 0.964,
+        "NUM": 1.0,
+        "PUNCT": 1.0,
+        "VERB": 0.882
+      },
+      "errors": [
+        {
+          "sentence": "Wire the replacement cable.",
+          "token": "cable",
+          "gold": "NOUN",
+          "predicted": "ADJ"
+        },
+        {
+          "sentence": "The wire connects the pump.",
+          "token": "connects",
+          "gold": "VERB",
+          "predicted": "NOUN"
+        },
+        {
+          "sentence": "The gauge reads zero.",
+          "token": "reads",
+          "gold": "VERB",
+          "predicted": "NOUN"
+        },
+        {
+          "sentence": "The required torque is 20 Nm.",
+          "token": "required",
+          "gold": "ADJ",
+          "predicted": "VERB"
+        }
+      ]
+    },
+    {
+      "rule_order": "reverse_morphological",
+      "correct_tokens": 103,
+      "total_tokens": 107,
+      "accuracy": 0.9626,
+      "per_tag_accuracy": {
+        "ADJ": 0.857,
+        "ADP": 1.0,
+        "ADV": 1.0,
+        "AUX": 1.0,
+        "CONJ": 1.0,
+        "DET": 1.0,
+        "NOUN": 0.964,
+        "NUM": 1.0,
+        "PUNCT": 1.0,
+        "VERB": 0.882
+      },
+      "errors": [
+        {
+          "sentence": "Wire the replacement cable.",
+          "token": "cable",
+          "gold": "NOUN",
+          "predicted": "ADJ"
+        },
+        {
+          "sentence": "The wire connects the pump.",
+          "token": "connects",
+          "gold": "VERB",
+          "predicted": "NOUN"
+        },
+        {
+          "sentence": "The gauge reads zero.",
+          "token": "reads",
+          "gold": "VERB",
+          "predicted": "NOUN"
+        },
+        {
+          "sentence": "The required torque is 20 Nm.",
+          "token": "required",
+          "gold": "ADJ",
+          "predicted": "VERB"
+        }
+      ]
+    }
+  ]
+}

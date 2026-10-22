@@ -1,0 +1,8 @@
+{"text":"Wire the replacement cable.","tokens":["Wire","the","replacement","cable","."],"tags":["VERB","DET","NOUN","NOUN","PUNCT"]}
+{"text":"The wire connects the pump.","tokens":["The","wire","connects","the","pump","."],"tags":["DET","NOUN","VERB","DET","NOUN","PUNCT"]}
+{"text":"Gauge the pressure before starting.","tokens":["Gauge","the","pressure","before","starting","."],"tags":["VERB","DET","NOUN","ADP","VERB","PUNCT"]}
+{"text":"The gauge reads zero.","tokens":["The","gauge","reads","zero","."],"tags":["DET","NOUN","VERB","NOUN","PUNCT"]}
+{"text":"Torque the bolt to spec.","tokens":["Torque","the","bolt","to","spec","."],"tags":["VERB","DET","NOUN","ADP","NOUN","PUNCT"]}
+{"text":"The required torque is 20 Nm.","tokens":["The","required","torque","is","20","Nm","."],"tags":["DET","ADJ","NOUN","AUX","NUM","NOUN","PUNCT"]}
+{"text":"The technician is measuring pressure.","tokens":["The","technician","is","measuring","pressure","."],"tags":["DET","NOUN","AUX","VERB","NOUN","PUNCT"]}
+{"text":"Replace the faulty pump carefully.","tokens":["Replace","the","faulty","pump","carefully","."],"tags":["VERB","DET","ADJ","NOUN","ADV","PUNCT"]}

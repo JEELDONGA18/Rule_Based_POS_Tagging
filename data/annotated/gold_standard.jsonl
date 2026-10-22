@@ -1,0 +1,8 @@
+{"text": "Replace the damaged wire near the motor.", "tokens": ["Replace", "the", "damaged", "wire", "near", "the", "motor", "."], "tags": ["VERB", "DET", "ADJ", "NOUN", "ADP", "DET", "NOUN", "PUNCT"]}
+{"text": "Pump the water line, then check the gauge.", "tokens": ["Pump", "the", "water", "line", ",", "then", "check", "the", "gauge", "."], "tags": ["VERB", "DET", "NOUN", "NOUN", "PUNCT", "CONJ", "VERB", "DET", "NOUN", "PUNCT"]}
+{"text": "The technician will inspect the hydraulic valve carefully.", "tokens": ["The", "technician", "will", "inspect", "the", "hydraulic", "valve", "carefully", "."], "tags": ["DET", "NOUN", "AUX", "VERB", "DET", "ADJ", "NOUN", "ADV", "PUNCT"]}
+{"text": "Tighten the loose bolt and test the sensor.", "tokens": ["Tighten", "the", "loose", "bolt", "and", "test", "the", "sensor", "."], "tags": ["VERB", "DET", "ADJ", "NOUN", "CONJ", "VERB", "DET", "NOUN", "PUNCT"]}
+{"text": "Torque the screw slowly.", "tokens": ["Torque", "the", "screw", "slowly", "."], "tags": ["VERB", "DET", "NOUN", "ADV", "PUNCT"]}
+{"text": "The pump is broken, but the wire is intact.", "tokens": ["The", "pump", "is", "broken", ",", "but", "the", "wire", "is", "intact", "."], "tags": ["DET", "NOUN", "AUX", "ADJ", "PUNCT", "CONJ", "DET", "NOUN", "AUX", "ADJ", "PUNCT"]}
+{"text": "Check the motor.", "tokens": ["Check", "the", "motor", "."], "tags": ["VERB", "DET", "NOUN", "PUNCT"]}
+{"text": "Replace the filter.", "tokens": ["Replace", "the", "filter", "."], "tags": ["VERB", "DET", "NOUN", "PUNCT"]}
